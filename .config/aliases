@@ -1,0 +1,74 @@
+#!/bin/zsh
+
+# Shortcuts and substitutions
+alias rank-mirrors="sudo reflector -p https --verbose --latest 10 --download-timeout 60 --sort rate --save /etc/pacman.d/mirrorlist" \
+      start-ssh-agent='eval "$(ssh-agent -s)"' \
+      yay="paru" \
+      cp="cp -iv" \
+      rm="rm -iv" \
+      mv="mv -iv" \
+      g18="gcc -std=c18" \
+      gxx11="g++ -std=c++11" \
+      gxx14="g++ -std=c++14" \
+      gxx17="g++ -std=c++17" \
+      gxx20="g++ -std=c++20" \
+      cn="cargo new" \
+      cb="cargo build" \
+      cr="cargo run" \
+      ct="cargo test" \
+      ci="cargo install" \
+      cu="cargo update" \
+      cui="cargo uninstall" \
+      setup="git --git-dir=$HOME/dev/git-repos/linux-configs --work-tree=$HOME" \
+      flex="neofetch"
+
+# Big thanks to Sayan Ghosh
+# Package Extractor
+# Usage: unpack <archive name here>
+unpack() {
+    if [ -f "$1" ]; then
+        case $1 in
+            *.7z)        7z x "$1"           ;;
+            *.br)        unbrotli -v "$1"    ;;
+            *.bz2)       bunzip2 -v "$1"     ;;
+            *.gz)        gunzip -v "$1"      ;;
+            *.lz4)       lz4 -dv "$1"        ;;
+            *.ova)       tar xvf "$1"        ;;
+            *.rar)       unrar x "$1"        ;;
+###############################################
+            *.tar)       tar xvf "$1"        ;;
+            *.tar.bz2)   tar xvjf "$1"       ;;
+            *.tbz2)      tar xvjf "$1"       ;;
+            *.tar.gz)    tar xvzf "$1"       ;;
+            *.tgz)       tar xvzf "$1"       ;;
+            *.tar.lz4)   tar xvf --lzma "$1" ;;
+            *.tlz4)      tar xvf --lzma "$1" ;;
+            *.tar.xz)    tar xvJf "$1"       ;; 
+            *.txz)       tar xvJf "$1"       ;;
+            *.tar.zst)   tar xvf --zstd "$1" ;;
+            *.tzst)      tar xvf --zstd "$1" ;;
+###############################################
+            *.xz)        unxz -v "$1"        ;;
+            *.zip)       unzip "$1"          ;;
+            *.Z)         uncompress -v "$1"  ;;
+            *)           echo "'$1': cannot be extracted via unpack()" ;;
+        esac
+    elif [ -z "$1" ]; then
+        echo "No files given for unpacking"
+    else
+        echo "'$1': not a valid file"
+    fi
+}
+
+# Colors
+alias ip='ip -color=auto'
+
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
