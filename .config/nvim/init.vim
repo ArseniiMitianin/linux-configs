@@ -14,15 +14,26 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'itchyny/lightline.vim'
 Plug 'townk/vim-autoclose'
 Plug 'sheerun/vim-polyglot'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 call plug#end()
 " } Plugins
 
 " Colors {
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if (has('termguicolors'))
+    set termguicolors
+endif
+
 syntax enable
 set background=dark
 " } Colors
+
+" Material Theme {
+let g:material_theme_style='darker'
+let g:material_terminal_italics=1
+let g:lightline = { 'colorscheme': 'material_vim' }
+colorscheme material
+" } Material Theme
 
 " Spaces & Tabs {
 set tabstop=4       " Number of visual spaces per TAB
