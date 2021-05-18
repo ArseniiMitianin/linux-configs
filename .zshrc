@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$PATH:$HOME/dev/flutter/bin"
+export PATH="$PATH:$HOME/dev/flutter/bin:$HOME/Android/Sdk/platform-tools"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
