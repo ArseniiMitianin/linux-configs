@@ -99,6 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR=nvim
-export JAVA_HOME=/usr/lib/jvm/java-15-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 [ -f "$HOME/.config/aliases" ] && source "$HOME/.config/aliases"
