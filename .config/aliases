@@ -5,9 +5,9 @@ alias rank-mirrors="sudo reflector -p https --verbose --latest 10 --download-tim
 alias start-ssh-agent='eval "$(ssh-agent -s)"'
 alias stop-ssh-agent='kill $SSH_AGENT_PID'
 alias yay="paru"
-alias cp="cp -iv"
-alias rm="rm -iv"
-alias mv="mv -iv"
+alias cp="cp -i"
+alias rm="rm -i"
+alias mv="mv -i"
 alias cat="bat"
 alias g18="gcc -std=c18"
 alias gpp11="g++ -std=c++11"
