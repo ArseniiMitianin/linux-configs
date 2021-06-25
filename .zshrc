@@ -101,4 +101,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
+# Uses bat for man-page coloring -> Found here: https://www.reddit.com/r/terminal_porn/comments/o1qic6/using_bat_instead_of_cat_syntax_colorization/
+export MANPAGER="sh -c 'col -bx | bat -l man -p'" 
+
 [ -f "$HOME/.config/aliases" ] && source "$HOME/.config/aliases"
