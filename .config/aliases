@@ -6,6 +6,7 @@ alias start-ssh-agent='eval "$(ssh-agent -s)"'
 alias stop-ssh-agent='kill $SSH_AGENT_PID'
 alias top-commands="history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10"
 alias yay="paru"
+alias bpytop="btop" # btop is bpytop, but written in C++. This alias is here in case if I forget that I deleted bpytop
 alias cp="cp -i"
 alias rm="rm -i"
 alias mv="mv -i"
