@@ -2,6 +2,7 @@
 
 # Shortcuts and substitutions
 alias rank-mirrors="sudo reflector -p https --verbose --latest 20 --download-timeout 60 --sort rate --save /etc/pacman.d/mirrorlist"
+alias restart-audio="killall easyeffects; kioclient5 exec easyeffects --gapplication-service &"
 alias start-ssh-agent='eval "$(ssh-agent -s)"'
 alias stop-ssh-agent='kill $SSH_AGENT_PID'
 alias top-commands="history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10"
